@@ -16,11 +16,11 @@
           render 'new'
       end
   end
-
-  def show
-      @event = Event.find(params[:id])
-  end
-    
+  
+  def show 
+    @event = Event.eager_load(:comments).find(params[:id]) 
+  end 
+  
   def attend
       @event.attendees << current_user
       @event.save
