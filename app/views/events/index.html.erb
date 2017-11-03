@@ -1,0 +1,10 @@
+<% provide(:title, 'Evénements') %>
+<h1>Evénements</h1>
+
+<ul class="events">
+  <% @events.each do |event| %>
+    <h3>
+      <%= link_to event.description, event %>
+        </h3> Créé par : <%= link_to event.user.name, event.user %>
+  <% end %>
+</ul>

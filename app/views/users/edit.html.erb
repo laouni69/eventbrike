@@ -1,0 +1,15 @@
+<% provide(:title, "Modifier l'utilisateur") %>
+<h1>Modifier votre profil</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.submit "Sauvegarder", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

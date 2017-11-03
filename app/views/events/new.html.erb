@@ -1,0 +1,20 @@
+<% provide(:title, "Nouvel événement") %>
+<h1>Nouvel événement</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event, url: events_path) do |f| %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+      
+      <%= f.label :date %>
+      <%= f.date_field :date, class: 'form-control' %>
+      
+      <%= f.label :place %>
+      <%= f.text_field :place, class: 'form-control' %>
+
+      <%= f.submit "Créer l'événement", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<% provide(:title, @event.description) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @event.description %> 
+      </h1>
+       <p>
+       <%= @event.date %>
+       </p>
+       <p>
+       <%= @event.place %>
+       </p>
+       <p>
+       <strong>Créateur:</strong>
+       <%= link_to @event.user.name, @event.user %></p>
+    </section>
+    
+     <%= button_to 'Participer', attend_event_path(@event), method: :post, confirm: 'really?' %>
+  </aside>
+</div>
